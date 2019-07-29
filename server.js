@@ -43,7 +43,7 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/mongoscraper", { userNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongoscraper", { userNewUrlParser: true});
 
 var db = mongoose.connection;
 
