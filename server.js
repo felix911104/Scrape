@@ -12,7 +12,7 @@ var Article = require("./models/Article.js");
 
 var request = require("request");
 var cheerio = require("cheerio");
-var MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost/mongoHeadlines"
+var MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost/mongoscraper"
 mongoose.connect(MONGODB_URL);
 
 mongoose.Promise = Promise;
@@ -42,7 +42,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 
-mongoose.connect("mongodb://user1:password1@ds113650.mlab.com:13650/heroku_t4wfzf9v");
+mongoose.connect("mongodb://user:password1@ds113650.mlab.com:13650/heroku_t4wfzf9v");
 
 var db = mongoose.connection;
 
