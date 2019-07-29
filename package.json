@@ -26,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/felix911104/Scrape/issues"
   },
-  "homepage": "https://github.com/felix911104/Scrape#readme"
+  "homepage": "https://github.com/felix911104/Scrape#readme",
+  "devDependencies": {}
 }
