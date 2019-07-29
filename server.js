@@ -12,7 +12,8 @@ var Article = require("./models/Article.js");
 // Scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
-
+var MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost/mongoHeadlines"
+mongoose.connect(MONGODB_URL);
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
