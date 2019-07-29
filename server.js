@@ -12,8 +12,7 @@ var Article = require("./models/Article.js");
 
 var request = require("request");
 var cheerio = require("cheerio");
-var MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost/mongoscraper"
-mongoose.connect(MONGODB_URL);
+
 
 mongoose.Promise = Promise;
 
@@ -35,14 +34,16 @@ app.use(express.static("public"));
 
 var exphbs = require("express-handlebars");
 
+
+
+
 app.engine("handlebars", exphbs({
     defaultLayout: "main",
     partialsDir: path.join(__dirname, "/views/layouts/partials")
 }));
 app.set("view engine", "handlebars");
 
-
-mongoose.connect("mongodb://user:password1@ds113650.mlab.com:13650/heroku_t4wfzf9v");
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/mongoscraper", { userNewUrlParser: true});
 
 var db = mongoose.connection;
 
